@@ -8,7 +8,14 @@
       </ul>
       <button v-on:click="greet('Hello Karan')">Say Greetings</button>
       </br>
-      <input type="text" v-on:keyup="pressKey">
+      <input type="text" v-on:keyup="pressKey" v-on:keyup.enter="enterHit">
+      </br>
+      <label>First Name:</label><input type="text" v-model="user.firstName">
+      </br>
+      
+    <label>Last Name:</label><input type="text" v-model="user.lastName">
+    </br>
+
   </div>
 </template>
 
@@ -37,8 +44,12 @@
          
          pressKey:function(e){
              console.log(e.target.value);
-         }
-         }
+         },
+
+         enterHit: function(){
+             console.log('You hit Enter');
+          }
+        }
  }
 </script>
 
